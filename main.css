@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color:lightgrey;
+}
+
+#taskList {
+    padding: 0;
+}
+
+#taskList li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#taskList li.completed {
+    text-decoration: line-through;
+}

@@ -1,14 +1,14 @@
-function validarFormulario() {
-    let campoA = document.getElementById('campoA').value;
-    let campoB = document.getElementById('campoB').value;
-
-    campoA = parseFloat(campoA);
-    campoB = parseFloat(campoB);
-
-    if (campoB > campoA) {
-        alert('Formulário válido! B é maior que A.');
-    } else {
-        alert('Formulário inválido! B deve ser maior que A.');
-        event.preventDefault();
-    }
-}
+$(document).ready(function(){
+    $('#taskForm').submit(function(e){
+        e.preventDefault();
+        var taskName = $('#taskInput').val();
+        if(taskName.trim() !== ''){
+            $('#taskList').append('<li>' + taskName + '</li>');
+            $('#taskInput').val('');
+        }
+    });
+    
+    $('#taskList').on('click', 'li', function(){
+        $(this).toggleClass('completed');
+        });
+});
